@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Pause task required variable
+    pause: 
+      minutes: "{{ snap_timeout }}"
