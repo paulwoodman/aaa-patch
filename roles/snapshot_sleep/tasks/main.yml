@@ -1,4 +1,4 @@
 ---
 - name: Pause task required variable
   pause: 
-    minutes: "{{ snap_timeout }}"
+   minutes: "{{ snap_timeout }}"
