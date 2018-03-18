@@ -1,4 +1,16 @@
 ---
-- name: Pause task required variable
+- downtime:
+    duration: 5m
+    comment: whatever
+  ignore_errors: true
+  register: downtime
+
+- name: Saving downtime state
+  set_fact:
+    downtime_failed: "{{ downtime | failed }}"
+
+- name: Request user confirmation to proceed in case downtime could not be set
   pause:
-   minutes: 5
+    prompt: 'Downtime could not be set for {{ item }}. Do you want to proceed? Press return to continue. Press Ctrl+c and then "a" to abort'
+  when: "{{ hostvars[item]['downtime_failed'] }}"
+  with_items: "{{ play_hosts }}"
