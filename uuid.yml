@@ -1,7 +1,0 @@
----
-- hosts: all
-  become: True
-  tasks:
-    - name: Display UUID
-      debug:
-        msg: "{{ansible_product_uuid|lower}}"
