@@ -1,0 +1,4 @@
+---
+- name: Display UUID
+  debug:
+    msg: "{{ansible_product_uuid|lower}}"

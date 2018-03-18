@@ -1,0 +1,15 @@
+---
+- name: Apply Updates
+  strategy: free
+  hosts: all
+  serial: '25%'
+  max_fail_percentage: 20
+  tasks:
+
+    - name: Get uuid of server for vmware snapshot
+      import_role:
+        name: gather_uuid
+
+    - name: Sleep process while snapshot in progress
+      import_role:
+        name: snapshot_sleep
