@@ -1,0 +1,7 @@
+---
+- name: Subscribe subscription based on environment
+  redhat_subscription:
+    state: present
+    activationkey: RHEL7_AK
+    org_id: Rydzinski
+    pool: '^Red Hat Enterprise Server$'

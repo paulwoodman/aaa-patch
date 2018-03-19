@@ -6,6 +6,10 @@
   max_fail_percentage: 20
   tasks:
 
+    - name: Subscribe system based on environment
+      import_role:
+        name: subscription
+
     - name: Get uuid of server for vmware snapshot
       import_role:
         name: gather_uuid
