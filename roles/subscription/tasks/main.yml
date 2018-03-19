@@ -1,20 +1,20 @@
 ---
 - name: Subscription based on Production
-  tags:
-    - Production
   redhat_subscription:
     state: present
     activationkey: RHEL7_AK
     org_id: Rydzinski
     autosubscribe: yes
     force_register: yes
+  tags:
+    - Prod
 
 - name: Subscription based on Developement
-  tags:
-    - Developement
   redhat_subscription:
     state: present
     activationkey: stage_ak
     org_id: Rydzinski
     autosubscribe: yes
     force_register: yes
+  tags:
+    - Dev
