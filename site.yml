@@ -5,6 +5,10 @@
   serial: '25%'
   max_fail_percentage: 20
   tasks:
+    - name: Run prepatching process
+      import_role:
+        name: prepatach_script
+
     - name: Grab uuid for host 
       import_role:
         name: gather_uuid
@@ -13,6 +17,6 @@
       import_role:
         name: snapshot_sleep
 
-    - name: Subscribe system to Production`
+    - name: Make sure system is correctly subscribed
       import_role:
         name: subscription
