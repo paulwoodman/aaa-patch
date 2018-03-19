@@ -1,7 +1,7 @@
 ---
 - name: copy script from remote host
   copy:
-   src: /tmp/prepatch_script.sh
+   src: prepatch_script.sh
    dest: /root/prepatch_script.sh
    mode: 0755
 
