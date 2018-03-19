@@ -1,5 +1,8 @@
-# aaa-patch
+# AAA-PatchMGMT
 
 Patch management playbook.
 
-manditory variable for Tower job template
+manditory variables required:
+
+sleep_interval: 'value'
+aaa_environment: 'dev' or 'prod'
