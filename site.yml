@@ -5,11 +5,14 @@
   serial: '25%'
   max_fail_percentage: 20
   tasks:
-
-    - name: Subscribe system based on environment
-      import_role:
-        name: subscription
-
-    - name: Get uuid of server for vmware snapshot
+    - name: Grab uuid for host 
       import_role:
         name: gather_uuid
+
+    - name: Sleep task while snapshot completes
+      import_role:
+        name: snapshot_sleep
+
+    - name: Subscribe system to Production`
+      import_role:
+        name: subscription

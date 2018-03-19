@@ -1,20 +1,11 @@
 ---
+- name: Get Subscription Variables
+  include_vars: '{{ aaa_environment }}.yml'
+
 - name: Subscription based on Production
   redhat_subscription:
     state: present
-    activationkey: RHEL7_AK
-    org_id: Rydzinski
+    activationkey: '{{ sat_activation_key }}'
+    org_id: '{{ sat_org_id }}'
     autosubscribe: yes
-    force_register: yes
-  tags:
-    - Prod
-
-- name: Subscription based on Developement
-  redhat_subscription:
-    state: present
-    activationkey: stage_ak
-    org_id: Rydzinski
-    autosubscribe: yes
-    force_register: yes
-  tags:
-    - Dev
+    force_register: yes 
