@@ -5,6 +5,14 @@
   serial: '25%'
   max_fail_percentage: 20
   tasks:
+    - name: Power on guest
+      import_role:
+       name: poweron_vm
+
+    - name: Sleep task while snapshot completes
+      import_role:
+        name: snapshot_sleep
+                     
     - name: Run prepatching process
       import_role:
         name: prepatch_script
@@ -25,6 +33,3 @@
       import_role:
         name: shutdown_host
     
-    - name: Power on guest
-      import_role:
-       name: poweron_vm
