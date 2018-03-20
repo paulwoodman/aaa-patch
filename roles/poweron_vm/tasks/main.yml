@@ -1,0 +1,9 @@
+- name: Set the state of a virtual machine to poweroff
+  vmware_guest_powerstate:
+    hostname: 192.168.5.220
+    username: root
+    password: 601635502
+    uuid: 564d9131-6289-ebdb-aa43-712ea29f9751
+    name: dummyvm
+    state: powered-on
+  delegate_to: localhost

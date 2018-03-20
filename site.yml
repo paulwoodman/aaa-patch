@@ -24,3 +24,7 @@
     - name: Shutdown server
       import_role:
         name: shutdown_host
+    
+    - name: Power on guest
+      import_role:
+       name: poweron_vm
