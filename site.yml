@@ -4,7 +4,9 @@
   hosts: all
   serial: '25%'
   max_fail_percentage: 20
+  gather_facts: false
   tasks:
+
     - name: Power on guest
       import_role:
        name: poweron_vm
